@@ -23,5 +23,6 @@ Instructions:
 11. Delete the setupTests.js, reportWebVitals.js, logo.svg, App.text.js, App.js, and the App.css files.
 12. To save your work to your repository, press the Source Control button on the left side of the screen, then click on the + to state all changes.
     If there are over 10000 changes in the Source Control, try just stating the .gitpod.yml file's changes by finding it in the list of changes then pressing the + next to  its name. That should leave you with 14 changes instead of over 10000, then you can state all changes.
-13. 
+13. At the top of the source control menu press the check mark to commit your stated changes to your repository, when prompted enter your commit message, press enter, then press the orange Sync Changes button that will pop up if all the changes have been commited or discarded.
+
 12. Now we are going to restart the Gitpod workspace so that the .gitpod.yml file con configure your environment.
