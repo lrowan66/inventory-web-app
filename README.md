@@ -25,4 +25,7 @@ Instructions:
     If there are over 10000 changes in the Source Control, try just stating the .gitpod.yml file's changes by finding it in the list of changes then pressing the + next to  its name. That should leave you with 14 changes instead of over 10000, then you can state all changes.
 13. At the top of the source control menu press the check mark to commit your stated changes to your repository, when prompted enter your commit message, press enter, then press the orange Sync Changes button that will pop up if all the changes have been commited or discarded.
     If the sync button doesn't pop up, then press the ... button at the top of the source control menu and navigate to Push, Pull > Sync.
+14. Now go to your Github repository tab and refresh the page to make sure your commit worked.
+15. Return to your Gitpod workspace tab, then open the Application Menu from the top left of the page and press Gitpod: Stop Workspace, then your IDE will close and offer a button to return to your Gitpod Dashboard, press it.
+
 12. Now we are going to restart the Gitpod workspace so that the .gitpod.yml file con configure your environment.
