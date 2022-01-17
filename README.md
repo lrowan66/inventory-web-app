@@ -56,3 +56,4 @@ Instructions:
 34. Using the same method, create a new file called, TypeSelect.js in the src folder, then copy and paste the contents from the TypeSelect.js file from my repository.
 35. Using the same method, create a new file called, netlify.toml in your react app folder, then copy and paste the contents from the netlify.toml file from my repository.
 36. Open the index.js file, then remove lines 4,5,11,12,13,14, and 15. Then replace App on line 7 with Inventory and paste the line, import Inventory from './Inventory.js'; at just underneath import './index.css';
+37. 

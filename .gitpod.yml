@@ -8,13 +8,12 @@ tasks:
       cd /workspace/inventory-web-app/my-react-app
       npm install
       npm install -g create-react-app
+      npm i mini-css-extract-plugin@2.4.7
       npm install netlify-cli -g
       npm install @astrajs/collections
       npm install axios
       echo ""
-      echo "htmlPractice GitPod Ready For Business!"
-      echo ""
-      echo "Command to Setup .env File: npm exec astra-setup htmlPractice_db medullamoto"
+      echo "GitPod Ready For Business!"
       echo ""
       echo "Command to Sign-In to Netlify: netlify login"
 github:
