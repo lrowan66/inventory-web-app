@@ -3,10 +3,10 @@ Here is an inventory management web app that I made for my Shopify co-op applica
 
 Instructions:
 
-1. From a webbrowser, go to gitpod.io and create or login to an account. You can use your Github account.
+1. From a webbrowser, go to https://gitpod.io/ and create or login to an account. You can use your Github account.
     Gitpod is a free browser based IDE that can be configured to automativally setup your work environment, and save your work as you go without having to commit it.
     Gitpod is based on VSCode so many of the features and shortcuts are the same.
-2. Open new tab and go to github.com and create a new repository.
+2. Open new tab and go to https://github.com/ and create a new repository.
 3. Press the green, CODE, button and copy the HTTPS address for your new Github repository.
 4. Open another new tab and type: gitpod.io/# into the url bar, then paste your respositories full address after the # and press enter.
     As an example, your url should look like this: gitpod.io/#https://github.com/lrowan66/inventory-web-app.git
@@ -26,6 +26,33 @@ Instructions:
 13. At the top of the source control menu press the check mark to commit your stated changes to your repository, when prompted enter your commit message, press enter, then press the orange Sync Changes button that will pop up if all the changes have been commited or discarded.
     If the sync button doesn't pop up, then press the ... button at the top of the source control menu and navigate to Push, Pull > Sync.
 14. Now go to your Github repository tab and refresh the page to make sure your commit worked.
-15. Return to your Gitpod workspace tab, then open the Application Menu from the top left of the page and press Gitpod: Stop Workspace, then your IDE will close and offer a button to return to your Gitpod Dashboard, press it.
-
-12. Now we are going to restart the Gitpod workspace so that the .gitpod.yml file con configure your environment.
+15. Press the green, CODE, button and copy the HTTPS address for your new Github repository, then return to your Gitpod dashboard tab and enter gitpod.io/# followed by your repositories full address into the url search bar.
+    This will start a new workspace from your repo but this time it will be configured by the .gitpod.yml file.
+    Once the new workspace opens up you will see a terminal window at the bottom of the screen installing a bunch of packages. First it installs a version of Node.js that is compatible with Netlify-Cli, then in your react app folder it installs the react, netlify, astra, and axios, packages.
+    Netlify allows us to use serverless functions to call data from our database hosted by AstraDB, which we will be using astra collections to comunicate with.
+    Axios allows us to call our serverless functions without visiting a new webpage from our react app.
+16. At this point we need a few more accounts, open a new tab and go to https://www.datastax.com/ then press Sign In and create an account. You can use your Github account.
+17. On the left hand side of your Datastax Astra dashboard press Create Database. Enter a database name and keyspace, then select Google Cloud as the provider, North America as area, and South Carolina as region. Make sure the current plan is free before pressing the Create Database button.
+18. It will take some time to initialize the database, so open a new tab and go to https://app.netlify.com/ and create and account. You can use your Github account.
+    You will have to do some profile setup, and name your team space which will hold your website if you choose to deploy it with netlify.
+19. On the next page press, Skip this step for now, as we won't be deploying a website for this project, although you could in the future.
+20. Go back to your Gitpod tab and in the terminal type, netlify login, then hold Ctrl and click on the link beside where it says Opening in the terminal, then press Authorize.
+21. Your database should now be setup so go back to your AstraDB tab, and click on the button with three dots to the right of the name of your new database and select Generate a Token.
+22. Select Database Administrator as the role, press Generate Token, and then Download Token Details.
+    You should save your databases name and keyspace to the downloaded .csv so you don't forget them.
+23. In the terminal type, npm exec astra-setup inventoryDatabase inventory_space, but replace inventoryDatabase with the name of your database and inventory_space with your keyspace. Press y and enter when prompted to install the setup packages.
+24. Open the GeneratedToken.csv you downloaded and copy the "Token" value, then paste it into the terminal when prompted for the Admin Token.
+    You should now see a .env file in the file explorer.
+25. Click on your react app folder in the file explorer, then press on the create new folder button beside the name of your repository at the top of the explorer.
+26. You must name the new folder, functions, so that netlify can access the serverless functions stored in it correctly.
+27. Using the same method, create a new file called, createItem.js in the functions folder, then copy and paste the contents from the createItem.js file from my repository.
+28. Using the same method, create a new file called, updateItem.js in the functions folder, then copy and paste the contents from the updateItem.js file from my repository.
+29. Using the same method, create a new file called, deleteItem.js in the functions folder, then copy and paste the contents from the deleteItem.js file from my repository.
+30. Using the same method, create a new file called, getAllItem.js in the functions folder, then copy and paste the contents from the getAllItem.js file from my repository.
+    These are the serverless functions that netlify will use to communicate with your database.
+31. Using the same method, create a new file called, Inventory.css in the src folder, then copy and paste the contents from the Inventory.css file from my repository.
+32. Using the same method, create a new file called, Inventory.js in the src folder, then copy and paste the contents from the Inventory.js file from my repository.
+33. Using the same method, create a new file called, InventorySpreadsheet.js in the src folder, then copy and paste the contents from the InventorySpreadsheet.js file from my repository.
+34. Using the same method, create a new file called, TypeSelect.js in the src folder, then copy and paste the contents from the TypeSelect.js file from my repository.
+35. Using the same method, create a new file called, netlify.toml in your react app folder, then copy and paste the contents from the netlify.toml file from my repository.
+36. Open the index.js file, then remove lines 4,5,11,12,13,14, and 15. Then replace App on line 7 with Inventory and paste the line, import Inventory from './Inventory.js'; at just underneath import './index.css';
