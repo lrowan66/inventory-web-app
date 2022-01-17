@@ -1,0 +1,34 @@
+tasks:
+  - name: inventory-web-app
+    init: |
+      cd /workspace/inventory-web-app
+      nvm install 14.17.5
+      npm install -g npm@latest
+    command: |
+      cd /workspace/inventory-web-app/my-react-app
+      npm install
+      npm install -g create-react-app
+      npm install netlify-cli -g
+      npm install @astrajs/collections
+      npm install axios
+      echo ""
+      echo "htmlPractice GitPod Ready For Business!"
+      echo ""
+      echo "Command to Setup .env File: npm exec astra-setup htmlPractice_db medullamoto"
+      echo ""
+      echo "Command to Sign-In to Netlify: netlify login"
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: false
+ports:
+  - port: 8888
+    onOpen: open-browser
+  - port: 3000
+    onOpen: open-browser
