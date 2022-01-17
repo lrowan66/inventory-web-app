@@ -28,6 +28,6 @@ github:
     addLabel: false
 ports:
   - port: 8888
-    onOpen: open-browser
+    onOpen: notify
   - port: 3000
-    onOpen: open-browser
+    onOpen: ignore
