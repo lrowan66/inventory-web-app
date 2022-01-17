@@ -7,7 +7,6 @@ function InventorySpreadsheet() {
 
     const fetchData = async () => {
         const results = await axios.get('/.netlify/functions/getAllItems');
-        //console.log(results);
         setInventory(results.data.data);
         setRecieved(true);
     };
@@ -25,10 +24,9 @@ function InventorySpreadsheet() {
                                 <td>{inventory[Object.keys(inventory)[i]].warehouse}</td>
                                 <td>{inventory[Object.keys(inventory)[i]].number}</td>
                                 <td>{inventory[Object.keys(inventory)[i]].name}</td>
-                                <td>{inventory[Object.keys(inventory)[i]].price}</td>
+                                <td>${inventory[Object.keys(inventory)[i]].price}</td>
                                 <td>{inventory[Object.keys(inventory)[i]].stock}</td>
                             </tr>);
-                //console.log(inventory[Object.keys(inventory)[i]].warehouse);
             }
 
             return(
@@ -43,8 +41,6 @@ function InventorySpreadsheet() {
 
     return(
         <>
-            {/*<p>{JSON.stringify(inventory)}</p> */}
-            
             <table>
                 <thead>
                     <tr>

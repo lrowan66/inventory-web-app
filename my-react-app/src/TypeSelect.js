@@ -28,7 +28,6 @@ function TypeSelect() {
         event.preventDefault();
         const name = event.target.name;
         const value = event.target.value;
-        //setInputs(values => ({...values, [name]: value}));
 
         if(operation === "create") {
             setCreates(values => ({...values, [name]: value}));
@@ -175,7 +174,7 @@ function TypeSelect() {
                         />
                     </label>
                     <br></br>
-                    <label>Enter Warehouse:
+                    <label>Enter New Warehouse:
                         <input 
                             type="text" 
                             name="warehouse" 
@@ -183,7 +182,7 @@ function TypeSelect() {
                             onBlur={handleChange}
                         />
                     </label>
-                    <label>Enter Item Number:
+                    <label>Enter New Item Number:
                         <input 
                         type="number" 
                         name="updateditemNumber" 
@@ -191,7 +190,7 @@ function TypeSelect() {
                         onBlur={handleChange}
                         />
                     </label>
-                    <label>Enter Item Name:
+                    <label>Enter New Item Name:
                         <input 
                         type="text" 
                         name="updateditemName" 
@@ -199,7 +198,7 @@ function TypeSelect() {
                         onBlur={handleChange}
                         />
                     </label>
-                    <label>Enter Price: $
+                    <label>Enter New Price: $
                         <input 
                         type="text" 
                         name="price"
@@ -207,7 +206,7 @@ function TypeSelect() {
                         onBlur={handleChange}
                         />
                     </label>
-                    <label>Enter Stock:
+                    <label>Enter New Stock:
                         <input 
                         type="text" 
                         name="stock"

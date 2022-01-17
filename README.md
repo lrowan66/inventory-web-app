@@ -1,7 +1,8 @@
 # inventory-web-app
 Here is an inventory management web app that I made for my Shopify co-op application. It uses the free cloud based Cassandra database offered by AstraDB for storage, React for the page design, Netlify for website and serverless function hosting, and Gitpod for an environment.
 
-Instructions:
+
+Set-up Instructions:
 
 1. From a webbrowser, go to https://gitpod.io/ and create or login to an account. You can use your Github account.
     Gitpod is a free browser based IDE that can be configured to automativally setup your work environment, and save your work as you go without having to commit it.
@@ -58,3 +59,13 @@ Instructions:
 36. Open the index.js file, then remove lines 4,5,11,12,13,14, and 15. Then replace App on line 7 with Inventory and paste the line, import Inventory from './Inventory.js'; at just underneath import './index.css';
 37. Now you should be done! In the terminal type, netlify dev, then wait for the notification in the bottom right and select where you would like to see the page, either in a new tab in the browser or the IDE.
     If you don't get the notification, then open the Remote Explorer from the list of buttons on the leftmost bar, and press the circle beside the port 8888.
+
+
+Using the Web App:
+
+1. Once the web page loads, you will see several headings, input fields, and a table which maybe displaying an error. The error message appears when no inventory items can be retirieved from the database, so it may appear after the database is first made because its empty.
+2. To add an inventory item to the database, under the Inventory Form heading make sure the Select CRUD Operation drop down is set to CREATE. Then fill in the input fields and press CREATE ITEM. The Item No. field is used as a sort of tracking ID specific to that number, in the future the web app should be updated to prevent users from entering a used id or to auto generate them.
+3. A table will always be at the bottom of the page showing all the items in the database so the READ operation has no function, but in the future you could add a method for searching for specific items or filtering the table
+4. Selecting the UPDATE option from the CRUD dropdown will make a new form appear. To update an item in the database, choose how to select the item in the database either by its Item Name or its Item No. then fill in the new data input fields and press UPDATE ITEM. An improved version of this app would make sure that the input fields are filled in properly and autofills with the items existing data so that the user can partially update the item.
+5. Selecting the DELETE operation allows you to remove items from the database permanently. You can delete an item by using either its Item Name or Item No. and pressing DELETE ITEM
+6. After making any changes to the database you may have to refresh the page before seeing the changes in the table.
